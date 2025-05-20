@@ -24,7 +24,7 @@
 
 
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"  x:Name="Text"></TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"  x:Name="Text" FontSize="30" FontFamily="Courier New" FontWeight="Bold"></TextBlock>
         <Button Grid.Row="1">1</Button>
         <Button Grid.Row="1" Grid.Column="1">2</Button>
         <Button Grid.Row="1" Grid.Column="2">3</Button>
