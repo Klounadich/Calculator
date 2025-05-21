@@ -55,37 +55,50 @@ namespace Calculator
         {
 
             bool isDigit = (e.Key >= Key.D0 && e.Key <= Key.D9) ||
-                  (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) ;
-            if (isDigit && e.IsDown)
+                  (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9);
+            try
             {
-                Text.Text += (e.Key - Key.D0).ToString();
-            }
-            else if (e.Key == Key.Multiply || e.Key == Key.OemPlus || e.Key == Key.OemMinus || e.Key == Key.Divide)
-            {
-                Text.Text += KeyToOperator(e.Key);
-            }
-            else if (e.Key == Key.Enter)
-            {
-                string val = new DataTable().Compute(Text.Text, null).ToString();
-                Text.Text = val;
-            }
-            else if (e.Key == Key.Delete)
-            {
-                Text.Text = string.Empty;
-            }
-
-            else if (e.Key == Key.Back)
-            {
-                if (!string.IsNullOrEmpty(Text.Text))
+                if (isDigit && e.IsDown)
                 {
-                    Text.Text = Text.Text.Substring(0, Text.Text.Length - 1);
+                    Text.Text += (e.Key - Key.D0).ToString();
+                }
+                else if (e.Key == Key.Multiply || e.Key == Key.OemPlus || e.Key == Key.OemMinus || e.Key == Key.Divide)
+                {
+                    Text.Text += KeyToOperator(e.Key);
+                }
+                else if (e.Key == Key.Enter)
+                {
+                    string val = new DataTable().Compute(Text.Text, null).ToString();
+                    Text.Text = val;
+                }
+                else if (e.Key == Key.Delete)
+                {
+                    Text.Text = string.Empty;
+                }
+                else if (e.Key == Key.J)
+                {
+                    Text.Text = "JS ХУЙНЯ";
+                }
+
+                else if (e.Key == Key.Back)
+                {
+                    if (!string.IsNullOrEmpty(Text.Text))
+                    {
+                        Text.Text = Text.Text.Substring(0, Text.Text.Length - 1);
+                    }
+                }
+                else
+                {
+                    Debug.WriteLine("Введена не цифра");
                 }
             }
-            else
-            {
-                Debug.WriteLine("Введена не цифра");
+            catch (Exception ex) 
+            { 
+                Debug.WriteLine(ex.ToString());
+                Text.Text = "Ошибка ввода . Сбросьте на AC";
             }
-        }
+            }
+
         private string KeyToOperator(Key key)
         {
             switch (key)
