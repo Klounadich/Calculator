@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="Калькулятор" Height="350" Width="500" WindowStyle="ThreeDBorderWindow">
-    <Grid x:Name="Calculator" Background="Azure">
+        Title="Калькулятор" Height="350" Width="500" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize">
+    <Grid x:Name="Calculator" Background="DarkGray">
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -15,31 +15,224 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>           
+            <ColumnDefinition Width="28*"></ColumnDefinition>
+            <ColumnDefinition Width="97*"/>
+            <ColumnDefinition Width="125*"></ColumnDefinition>
+            <ColumnDefinition Width="125*"></ColumnDefinition>
+            <ColumnDefinition Width="125*"></ColumnDefinition>
 
 
 
 
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"  x:Name="Text" FontSize="30" FontFamily="Courier New" FontWeight="Bold"></TextBlock>
-        <Button Grid.Row="1">1</Button>
-        <Button Grid.Row="1" Grid.Column="1">2</Button>
-        <Button Grid.Row="1" Grid.Column="2">3</Button>
-        <Button Grid.Row="2" Grid.Column="0">4</Button>
-        <Button Grid.Row="2" Grid.Column="1">5</Button>
-        <Button Grid.Row="2" Grid.Column="2">6</Button>
-        <Button Grid.Row="3" Grid.Column="0">7</Button>
-        <Button Grid.Row="3" Grid.Column="1">8</Button>
-        <Button Grid.Row="3" Grid.Column="2">9</Button>
-        <Button Grid.Row="4" Grid.Column="0">0</Button>
-        <Button Grid.Row="4" Grid.Column="1">/</Button>
-        <Button Grid.Row="4" Grid.Column="2">-</Button>
-        <Button Grid.Row="1" Grid.Column="3">AC</Button>
-        <Button Grid.Row="2" Grid.Column="3">+</Button>
-        <Button Grid.Row="3" Grid.Column="3">*</Button>
-        <Button Grid.Row="4" Grid.Column="3">=</Button>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  x:Name="Text" FontSize="30" FontFamily="Courier New" FontWeight="Bold" Background="Azure" Margin="0,0,0,67" Grid.RowSpan="2"></TextBlock>
+        <Button Grid.Row="1" Width="90" Height="50" FontSize="30" Grid.ColumnSpan="2" Margin="18,8,17,9">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+CornerRadius="20" 
+Background="Orange"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template> 1
+        </Button>
+        <Button Grid.Row="1" Grid.Column="2" Width="90" Height="50" FontSize="30" Margin="17,8,18,9">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+                CornerRadius="20" 
+                Background="Orange"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template> 2
+        </Button>
+        <Button Grid.Row="1" Grid.Column="3" Width="90" Height="50" FontSize="30" Margin="18,8,17,9">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+    CornerRadius="20" 
+    Background="Orange"
+    BorderBrush="{TemplateBinding BorderBrush}"
+    BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template> 3
+        </Button>
+        <Button Grid.Row="2" Grid.Column="0" Width="90" Height="50" FontSize="30" Grid.ColumnSpan="2" Margin="18,8,17,8">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+CornerRadius="20" 
+Background="Orange"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template> 4
+        </Button>
+        <Button Grid.Row="2" Grid.Column="2" Width="90" Height="50" FontSize="30" Margin="17,8,18,8">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+CornerRadius="20" 
+Background="Orange"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template> 5
+        </Button>
+        <Button Grid.Row="2" Grid.Column="3" Width="90" Height="50" FontSize="30" Margin="18,8,17,8">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+CornerRadius="20" 
+Background="Orange"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template> 6
+        </Button>
+        <Button Grid.Row="3" Grid.Column="0" Width="90" Height="50" FontSize="30" Grid.ColumnSpan="2" Margin="18,9,17,8">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+CornerRadius="20" 
+Background="Orange"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template> 7
+        </Button>
+        <Button Grid.Row="3" Grid.Column="2" Width="90" Height="50" FontSize="30" Margin="17,9,18,8">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+CornerRadius="20" 
+Background="Orange"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template> 8
+        </Button>
+        <Button Grid.Row="3" Grid.Column="3" Width="90" Height="50" FontSize="30" Margin="18,9,17,8">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+CornerRadius="20" 
+Background="Orange"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template> 9
+        </Button>
+        <Button Grid.Row="4" Grid.Column="0" Width="90" Height="50" FontSize="30" Grid.ColumnSpan="2" Margin="18,9,17,8">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+CornerRadius="20" 
+Background="Orange"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template> 0
+        </Button>
+        <Button Grid.Row="4" Grid.Column="2" Width="90" Height="50" FontSize="30" Margin="17,9,18,8">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+CornerRadius="20" 
+Background="Orange"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template> /
+        </Button>
+        <Button Grid.Row="4" Grid.Column="3" Width="90" Height="50" FontSize="30" Margin="18,9,17,8">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+CornerRadius="20" 
+Background="Orange"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template> -
+        </Button>
+        <Button Grid.Row="1" Grid.Column="4" FontSize="30" FontWeight="Bold" Margin="0,0,0,66" Grid.RowSpan="2">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+CornerRadius="20" 
+Background="Orange"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template> AC
+        </Button>
+        <Button Grid.Row="2" Grid.Column="4" FontSize="30">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+CornerRadius="20" 
+Background="Orange"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template> +
+        </Button>
+        <Button Grid.Row="2" Grid.Column="4" FontSize="30" Margin="0,66,0,0" Grid.RowSpan="2">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+CornerRadius="20" 
+Background="Orange"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template> *
+        </Button>
+        <Button Grid.Row="3" Grid.Column="4" FontSize="30" Margin="0,67,0,0" Grid.RowSpan="2">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+CornerRadius="20" 
+Background="Orange"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template> =
+        </Button>
     </Grid>
 </Window>
